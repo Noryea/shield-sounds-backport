@@ -11,13 +11,11 @@ public class PlayerHurt {
     public static void onHurt(final Player player, DamageSource source, float amount) {
         if (!player.isDamageSourceBlocked(source) || !(amount > 0)) return;
         ServerLevel serverLevel = (ServerLevel) player.level();
-        if (!source.is(DamageTypeTags.IS_PROJECTILE) && source.getDirectEntity() instanceof LivingEntity livingEntity) {
-            if (livingEntity.canDisableShield()) {
-                serverLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BREAK, player.getSoundSource(), 0.8F, 0.8F + serverLevel.random.nextFloat() * 0.4F);
-            } else if (player.hurtTime == 0) {
-                serverLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BLOCK, player.getSoundSource(), 1.0F, 0.8F + serverLevel.random.nextFloat() * 0.4F);
-                System.out.println("test");
-            }
+        if (!source.is(DamageTypeTags.IS_PROJECTILE) && source.getDirectEntity() instanceof LivingEntity livingEntity && livingEntity.canDisableShield()) {
+            serverLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BREAK, player.getSoundSource(), 0.8F, 0.8F + serverLevel.random.nextFloat() * 0.4F);
+        } else if (player.hurtTime == 0) {
+            serverLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BLOCK, player.getSoundSource(), 1.0F, 0.8F + serverLevel.random.nextFloat() * 0.4F);
+            System.out.println("test");
         }
     }
 }
