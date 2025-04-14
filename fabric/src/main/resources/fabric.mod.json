@@ -1,0 +1,21 @@
+{
+	"schemaVersion": 1,
+	"id": "shieldsoundsbackport",
+	"version": "${version}",
+	"name": "Shield Sounds Backport",
+	"description": "A server-side mod backports shield sounds from the latest Minecraft release. (Fixes MC-255756)",
+	"authors": [
+		"Noryea"
+	],
+	"contact": {
+		"sources": "",
+		"issues": ""
+	},
+	"license": "MIT",
+	"environment": "*",
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": ">=1.20",
+		"java": ">=17"
+	}
+}
