@@ -6,7 +6,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout Repository
@@ -34,7 +34,7 @@ jobs:
         cat $GITHUB_WORKSPACE/gradle.properties | grep ^mod_version= >> $GITHUB_ENV
 
     - name: Upload Build Artifact
-      run: echo "package_name=[$minecraft_version multi-loader] $archives_base_name-$mod_version.${{ github.run_number }}" >> $GITHUB_ENV
+      run: echo "package_name=$archives_base_name-$mod_version.${{ github.run_number }}" >> $GITHUB_ENV
     - uses: actions/upload-artifact@v4
       with:
         name: ${{ env.package_name }}

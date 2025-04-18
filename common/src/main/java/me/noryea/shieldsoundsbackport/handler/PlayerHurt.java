@@ -15,7 +15,6 @@ public class PlayerHurt {
             serverLevel.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BREAK, player.getSoundSource(), 0.8F, 0.8F + serverLevel.random.nextFloat() * 0.4F);
         } else if (player.hurtTime == 0) {
             serverLevel.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.SHIELD_BLOCK, player.getSoundSource(), 1.0F, 0.8F + serverLevel.random.nextFloat() * 0.4F);
-            System.out.println("test");
         }
     }
 }
