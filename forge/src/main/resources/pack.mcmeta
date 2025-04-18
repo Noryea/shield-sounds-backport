@@ -1,7 +1,7 @@
 {
   "pack": {
     "description": "A server-side mod backports shield sounds from latest Minecraft release (fixes MC-255756)",
-    "pack_format": 48,
+    "pack_format": 18,
     "supported_formats": [
       0,
       2147483647

@@ -15,11 +15,11 @@ A server-side mod backports shield sounds from the latest Minecraft release. (Fi
 [[dependencies.shieldsoundsbackport]]
 modId = "forge"
 mandatory = true
-versionRange = "[51,)"
+versionRange = "[46,)"
 ordering = "NONE"
 
 [[dependencies.shieldsoundsbackport]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.21,)"
+versionRange = "[1.20,)"
 ordering = "NONE"
