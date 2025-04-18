@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+issueTrackerURL = "https://github.com/Noryea/shield-sounds-backport/issues"
+license = "MIT"
+
+[[mods]]
+modId = "shieldsoundsbackport"
+version = "${version}"
+displayName = "Shield Sounds Backport"
+authors = "Noryea"
+description = '''
+A server-side mod backports shield sounds from the latest Minecraft release. (Fixes MC-255756)
+'''
+
+[[dependencies.shieldsoundsbackport]]
+modId = "neoforge"
+mandatory = true
+versionRange = "[20,)"
+ordering = "NONE"
+
+[[dependencies.shieldsoundsbackport]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20,)"
+ordering = "NONE"
