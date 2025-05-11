@@ -1,7 +1,7 @@
 package me.noryea.shieldsoundsbackport;
 
 import me.noryea.shieldsoundsbackport.handler.PlayerHurt;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
@@ -14,8 +14,8 @@ public class ShieldSoundsBackportNeo {
     }
 
     @SubscribeEvent
-    public void onLivingEntityHurt(ShieldBlockEvent event) {
-        if (event.getEntity() instanceof Player player) {
+    public void onShieldBlock(ShieldBlockEvent event) {
+        if (event.getEntity() instanceof ServerPlayer player) {
             PlayerHurt.onHurt(player, event.getDamageSource(), event.getOriginalBlockedDamage());
         }
         event.setCanceled(false);
